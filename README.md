@@ -115,6 +115,8 @@ Evaluation Metrics → Prototype Matching → Dashboard Visualization
 
 * **SHAP**: Pixel-level contributions
 
+  <img width="5911" height="2212" alt="Image" src="https://github.com/user-attachments/assets/4788bb3b-8862-4450-afdb-7e03918d7ae7" />
+
 ### 🔹 Evaluation Metrics
 
 * **Deletion Curve ↓** → Faster drop = better explanation
