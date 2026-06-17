@@ -1,5 +1,7 @@
 # 🔍 Explainable AI Dashboard for Deep Learning Models using Grad-CAM, LIME, and SHAP (CIFAR-10)
 
+<img width="2680" height="2066" alt="Image" src="https://github.com/user-attachments/assets/2ec84595-00bd-4b12-a246-cbfb1eaf8e2b" />
+
 ---
 
 ## 📌 Problem Statement
