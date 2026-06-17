@@ -123,6 +123,8 @@ Evaluation Metrics → Prototype Matching → Dashboard Visualization
 * **Insertion Curve ↑** → Faster rise = better explanation
 * **AUC Scores** → Quantitative comparison of XAI methods
 
+<img width="2684" height="741" alt="Image" src="https://github.com/user-attachments/assets/67690b90-3b9a-4a99-aa9d-2bafe750576e" />
+
 ### 🔹 Prototype Analysis
 
 * Displays top-5 similar images from training dataset
