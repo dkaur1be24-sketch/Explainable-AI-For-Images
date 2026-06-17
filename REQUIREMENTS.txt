@@ -1,0 +1,14 @@
+# Explainable AI for Images — Dependencies
+# Install with:  pip install -r requirements.txt
+ 
+# PyTorch (install separately with CUDA — see README)
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+ 
+torchvision>=0.16.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+opencv-python>=4.8.0
+Pillow>=10.0.0
+scikit-image>=0.21.0
+lime>=0.2.0.1
+tqdm>=4.65.0
