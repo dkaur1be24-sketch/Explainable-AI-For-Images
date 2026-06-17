@@ -147,6 +147,15 @@ Each dashboard includes:
 
 ---
 
+## 📁 More Results
+
+Additional outputs across different classes and scenarios are available in the `/results` folder.
+
+These include:
+- Multi-class dashboard outputs
+- Additional Grad-CAM, LIME, SHAP visualizations
+- Prototype comparisons across classes
+
 ## 🖥️ Dashboard (Core Feature)
 
 The `dashboard.py` file builds a **complete Explainable AI visualization system**.
