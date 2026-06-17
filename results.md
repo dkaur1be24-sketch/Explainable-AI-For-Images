@@ -39,17 +39,15 @@ Different classes are used here to avoid repetition and show robustness.
 
 Prototype matching for different categories:
 
-#### 🐱 Cat
-<img src="ADD_IMAGE_LINK_HERE" />
+#### 🐱 Bird
+<img width="2894" height="743" alt="Image" src="https://github.com/user-attachments/assets/e5657a74-3eef-49b5-9a88-bbe1ce7a539b" />
 
 #### 🚢 Ship
-<img src="ADD_IMAGE_LINK_HERE" />
+<img width="2894" height="743" alt="Image" src="https://github.com/user-attachments/assets/dd1981aa-e681-482c-bd09-646ce3ac77d5" />
 
-#### 🐴 Horse
-<img src="ADD_IMAGE_LINK_HERE" />
+#### 🐴 Truck
+<img width="2894" height="743" alt="Image" src="https://github.com/user-attachments/assets/cb8e835d-1df1-4a12-9d20-9d29235f7063" />
 
 ---
 
-### 📌 Note
 
-For complete outputs and all class-wise visualizations, please refer to the `/results` folder.
