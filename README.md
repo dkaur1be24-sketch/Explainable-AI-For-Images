@@ -130,10 +130,6 @@ Evaluation Metrics → Prototype Matching → Dashboard Visualization
 * Displays top-5 similar images from training dataset
 
   <img width="2894" height="743" alt="Image" src="https://github.com/user-attachments/assets/1921c91e-607f-4ea9-81e2-63c273f61e0d" />
-
-
-
-
   <img width="1809" height="1479" alt="Image" src="https://github.com/user-attachments/assets/df0cf920-a271-467b-87a4-60d67af76c6a" />
 
 ### 🔹 Dashboard Output
