@@ -18,9 +18,9 @@ from skimage.segmentation import mark_boundaries
 # ─────────────────────────────────────────────
 DEVICE        = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 NUM_CLASSES   = 10
-DATA_DIR      = r"C:\Users\Diljeet\OneDrive\Desktop\new_project\data"
-MODEL_PATH    = r"C:\Users\Diljeet\OneDrive\Desktop\new_project\resnet18_cifar10.pth"
-OUT_DIR       = r"C:\Users\Diljeet\OneDrive\Desktop\new_project\xai_outputs\linkedin"
+DATA_DIR      = r"D:\ALL_PROJECTS\XAI_PROJECT\data"
+MODEL_PATH    = r"D:\ALL_PROJECTS\XAI_PROJECT\resnet18_cifar10.pth"
+OUT_DIR       = r"D:\ALL_PROJECTS\XAI_PROJECT\xai_outputs\linkedin"
 CLASS_TO_SHOW = "dog"         # ← change this
 LIME_SAMPLES  = 1000         # higher = better quality, slower (~10s)
 LIME_FEATURES = 6             # number of top superpixels to highlight
