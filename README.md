@@ -131,6 +131,7 @@ Evaluation Metrics → Prototype Matching → Dashboard Visualization
 
   <img width="2894" height="743" alt="Image" src="https://github.com/user-attachments/assets/1921c91e-607f-4ea9-81e2-63c273f61e0d" />
   <img width="1809" height="1479" alt="Image" src="https://github.com/user-attachments/assets/df0cf920-a271-467b-87a4-60d67af76c6a" />
+  <img width="1800" height="600" alt="Image" src="https://github.com/user-attachments/assets/1c9e404f-caa2-4b84-8271-1e81fa264268" />
 
 ### 🔹 Dashboard Output
 
