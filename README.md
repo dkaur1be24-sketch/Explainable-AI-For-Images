@@ -1,12 +1,12 @@
-# 🔍 Explainable AI Dashboard for Image Classification (CIFAR-10)
+# 🔍 Explainable AI Dashboard for Deep Learning Models using Grad-CAM, LIME, and SHAP(CIFAR-10)
 
 ---
 
-**Explainable AI Dashboard for Deep Learning Models using Grad-CAM, LIME, and SHAP**
+
 
 ---
 
-## 2. Problem Statement
+##  Problem Statement
 
 Deep learning models, especially Convolutional Neural Networks (CNNs), achieve high accuracy in image classification tasks but act as **black boxes**. This lack of transparency makes it difficult to understand *why* a model makes a particular decision.
 
@@ -20,7 +20,7 @@ This project addresses this issue by:
 
 ---
 
-## 3. Role of Edge Computing
+##  Role of Edge Computing
 
 This project is designed to be deployable on **edge devices (e.g., Jetson Nano)**.
 
@@ -38,7 +38,7 @@ This project is designed to be deployable on **edge devices (e.g., Jetson Nano)*
 
 ---
 
-## 4. Methodology / Approach
+##  Methodology / Approach
 
 ### 🔁 Overall Pipeline
 
@@ -75,7 +75,7 @@ Evaluation Metrics → Prototype Matching → Dashboard Visualization
 
 ---
 
-## 5. Model Details
+##  Model Details
 
 * **Model**: ResNet18 (CNN architecture)
 * **Dataset**: CIFAR-10
@@ -90,7 +90,7 @@ Evaluation Metrics → Prototype Matching → Dashboard Visualization
 
 ---
 
-## 6. Training Details
+##  Training Details
 
 * **Dataset**: CIFAR-10 (10 classes)
 * **Training Process**:
@@ -106,7 +106,7 @@ Evaluation Metrics → Prototype Matching → Dashboard Visualization
 
 ---
 
-## 7. Results / Output
+##  Results / Output
 
 ### 📊 Model Output
 
@@ -140,7 +140,7 @@ Each dashboard includes:
 
 ---
 
-## 8. Dashboard (Core Feature)
+##  Dashboard (Core Feature)
 
 The `dashboard.py` file builds a **complete Explainable AI visualization system**.
 
@@ -164,7 +164,7 @@ The `dashboard.py` file builds a **complete Explainable AI visualization system*
 
 ---
 
-## 9. Setup Instructions
+##  Setup Instructions
 
 ### 🔧 Requirements
 
@@ -204,7 +204,7 @@ python dashboard.py
 
 ---
 
-## 10. Key Highlights
+## Key Highlights
 
 ✔ Combines **three XAI methods** (Grad-CAM, LIME, SHAP)
 ✔ Provides **quantitative evaluation (AUC, curves)**
@@ -215,7 +215,7 @@ python dashboard.py
 
 ---
 
-## 11. Future Improvements
+## Future Improvements
 
 * Real-time dashboard UI (web app)
 * Support for larger datasets (ImageNet)
@@ -224,7 +224,7 @@ python dashboard.py
 
 ---
 
-## 12. Conclusion
+##  Conclusion
 
 This project bridges the gap between **model accuracy and interpretability** by combining multiple XAI techniques into a unified dashboard. It not only explains predictions but also evaluates and visualizes them, making deep learning models more transparent and trustworthy.
 
