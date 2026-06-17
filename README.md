@@ -1,8 +1,8 @@
-# 🔍 Explainable AI Dashboard for Deep Learning Models using Grad-CAM, LIME, and SHAP(CIFAR-10)
+# 🔍 Explainable AI Dashboard for Deep Learning Models using Grad-CAM, LIME, and SHAP (CIFAR-10)
 
+---
 
-
-##  Problem Statement
+## 📌 Problem Statement
 
 Deep learning models, especially Convolutional Neural Networks (CNNs), achieve high accuracy in image classification tasks but act as **black boxes**. This lack of transparency makes it difficult to understand *why* a model makes a particular decision.
 
@@ -12,13 +12,11 @@ This project addresses this issue by:
 * Comparing multiple Explainable AI (XAI) techniques
 * Evaluating explanation quality using quantitative metrics
 
-👉 Goal: Build a system that explains, evaluates, and visualizes model decisions in a clear and interpretable way.
+👉 **Goal:** Build a system that explains, evaluates, and visualizes model decisions in a clear and interpretable way.
 
 ---
 
-
-
-##  Methodology / Approach
+## ⚙️ Methodology / Approach
 
 ### 🔁 Overall Pipeline
 
@@ -27,88 +25,99 @@ Input Image → Preprocessing → Model Prediction → XAI Explanations →
 Evaluation Metrics → Prototype Matching → Dashboard Visualization
 ```
 
-### 🧩 Steps Explained:
+### 🧩 Steps Explained
 
 1. **Input**: Images from CIFAR-10 dataset
+
 2. **Preprocessing**:
 
    * Normalization for model input
    * Raw images for visualization
+
 3. **Model**:
 
    * ResNet18 predicts class probabilities
+
 4. **Explainability**:
 
-   * Grad-CAM → attention heatmaps
-   * LIME → local region importance
-   * SHAP → pixel-level contribution
+   * Grad-CAM → Attention heatmaps
+   * LIME → Local region importance
+   * SHAP → Pixel-level contribution
+
 5. **Evaluation**:
 
    * Deletion & Insertion curves
    * AUC scores
+
 6. **Prototype Matching**:
 
    * Finds similar training images using feature embeddings
+
 7. **Dashboard Generation**:
 
    * Combines all outputs into a visual panel
 
 ---
 
-##  Model Details
+## 🧠 Model Details
 
 * **Model**: ResNet18 (CNN architecture)
 * **Dataset**: CIFAR-10
 * **Input Size**: 32 × 32 RGB images
 * **Framework**: PyTorch
-* **Feature Extraction**:
 
-  * Final layer removed to extract embeddings
-* **Special Handling**:
+### Feature Extraction
 
-  * Modified ResNet blocks to fix SHAP compatibility (removed inplace operations)
+* Final layer removed to extract embeddings
+
+### Special Handling
+
+* Modified ResNet blocks to fix SHAP compatibility (removed inplace operations)
 
 ---
 
-##  Training Details
+## 🏋️ Training Details
 
 * **Dataset**: CIFAR-10 (10 classes)
+
 * **Training Process**:
 
   * Standard supervised learning
   * Cross-entropy loss
+
 * **Evaluation**:
 
   * Accuracy and loss tracking
+
 * **Output**:
 
   * Trained model saved as `.pth` file
 
 ---
 
-##  Results / Output
+## 📊 Results / Output
 
-### 📊 Model Output
+### 🔹 Model Output
 
 * Predicted class with confidence score
 
-### 🧠 Explainability Outputs
+### 🔹 Explainability Outputs
 
 * **Grad-CAM**: Heatmaps showing important regions
 * **LIME**: Segmented region importance
 * **SHAP**: Pixel-level contributions
 
-### 📉 Evaluation Metrics
+### 🔹 Evaluation Metrics
 
-* **Deletion Curve** ↓ → Faster drop = better explanation
-* **Insertion Curve** ↑ → Faster rise = better explanation
+* **Deletion Curve ↓** → Faster drop = better explanation
+* **Insertion Curve ↑** → Faster rise = better explanation
 * **AUC Scores** → Quantitative comparison of XAI methods
 
-### 🧬 Prototype Analysis
+### 🔹 Prototype Analysis
 
 * Displays top-5 similar images from training dataset
 
-### 🖼️ Dashboard Output
+### 🔹 Dashboard Output
 
 Each dashboard includes:
 
@@ -120,11 +129,11 @@ Each dashboard includes:
 
 ---
 
-##  Dashboard (Core Feature)
+## 🖥️ Dashboard (Core Feature)
 
 The `dashboard.py` file builds a **complete Explainable AI visualization system**.
 
-### What it does:
+### What it does
 
 * Runs predictions on test images
 * Generates explanations using:
@@ -136,7 +145,7 @@ The `dashboard.py` file builds a **complete Explainable AI visualization system*
 * Finds similar images (prototypes)
 * Creates a **final dashboard image per class**
 
-### Output:
+### Output
 
 * High-quality visual panels saved as `.png` files
 
@@ -144,7 +153,7 @@ The `dashboard.py` file builds a **complete Explainable AI visualization system*
 
 ---
 
-##  Setup Instructions
+## 🛠️ Setup Instructions
 
 ### 🔧 Requirements
 
@@ -184,18 +193,18 @@ python dashboard.py
 
 ---
 
-## Key Highlights
+## 🚀 Key Highlights
 
-✔ Combines **three XAI methods** (Grad-CAM, LIME, SHAP)
-✔ Provides **quantitative evaluation (AUC, curves)**
-✔ Includes **prototype-based interpretability**
-✔ Fixes **SHAP-PyTorch compatibility issue**
-✔ Generates **complete visual dashboards**
-✔ Ready for **edge deployment**
+* ✔ Combines **three XAI methods** (Grad-CAM, LIME, SHAP)
+* ✔ Provides **quantitative evaluation (AUC, curves)**
+* ✔ Includes **prototype-based interpretability**
+* ✔ Fixes **SHAP–PyTorch compatibility issue**
+* ✔ Generates **complete visual dashboards**
+* ✔ Ready for **edge deployment**
 
 ---
 
-## Future Improvements
+## 🔮 Future Improvements
 
 * Real-time dashboard UI (web app)
 * Support for larger datasets (ImageNet)
@@ -204,19 +213,19 @@ python dashboard.py
 
 ---
 
-##  Conclusion
+## 📌 Conclusion
 
 This project bridges the gap between **model accuracy and interpretability** by combining multiple XAI techniques into a unified dashboard. It not only explains predictions but also evaluates and visualizes them, making deep learning models more transparent and trustworthy.
 
 ---
-##👩‍💻 Author
 
-Diljeet Kaur
+## 👩‍💻 Author
+
+**Diljeet Kaur**
+
 ---
 
----
-##⭐ Final Note
+## ⭐ Final Note
 
 This project is not just about generating explanations —
-it is about understanding, validating, and trusting AI decisions.
----
+it is about **understanding, validating, and trusting AI decisions**.
