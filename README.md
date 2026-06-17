@@ -93,7 +93,7 @@ Evaluation Metrics → Prototype Matching → Dashboard Visualization
 
 * **Output**:
 
-  * Trained model saved as `.pth` file
+  <img width="1800" height="600" alt="Image" src="https://github.com/user-attachments/assets/91d867fd-5fed-49db-9ed2-bb9b7a6d1dfb" />
 
 ---
 
