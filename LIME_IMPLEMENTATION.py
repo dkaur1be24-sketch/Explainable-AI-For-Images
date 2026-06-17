@@ -22,7 +22,7 @@ DATA_DIR      = r"C:\Users\Diljeet\OneDrive\Desktop\new_project\data"
 MODEL_PATH    = r"C:\Users\Diljeet\OneDrive\Desktop\new_project\resnet18_cifar10.pth"
 OUT_DIR       = r"C:\Users\Diljeet\OneDrive\Desktop\new_project\xai_outputs\linkedin"
 CLASS_TO_SHOW = "dog"         # ← change this
-LIME_SAMPLES  = 1000          # higher = better quality, slower (~10s)
+LIME_SAMPLES  = 1000         # higher = better quality, slower (~10s)
 LIME_FEATURES = 6             # number of top superpixels to highlight
 
 CIFAR10_CLASSES = [
@@ -122,6 +122,7 @@ explanation = explainer.explain_instance(
     hide_color=0,
     num_samples=LIME_SAMPLES,
     random_seed=42,
+    batch_size=32,
 )
 print("LIME done.\n")
 
