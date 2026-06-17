@@ -143,6 +143,8 @@ Each dashboard includes:
 * Deletion & Insertion curves
 * Prototype images
 
+<img width="3237" height="4713" alt="Image" src="https://github.com/user-attachments/assets/786c6973-1e9d-48ba-b922-259f28113570" />
+
 ---
 
 ## 🖥️ Dashboard (Core Feature)
