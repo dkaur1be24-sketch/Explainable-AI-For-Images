@@ -110,6 +110,9 @@ Evaluation Metrics → Prototype Matching → Dashboard Visualization
 <img width="4524" height="2076" alt="Image" src="https://github.com/user-attachments/assets/98fe95a9-20ff-42aa-93c4-3f964044d7c6" />
   
 * **LIME**: Segmented region importance
+
+<img width="5911" height="2073" alt="Image" src="https://github.com/user-attachments/assets/f7de6f2e-60c5-4d16-95d7-c5b9ca0841a1" />
+
 * **SHAP**: Pixel-level contributions
 
 ### 🔹 Evaluation Metrics
