@@ -16,23 +16,7 @@ This project addresses this issue by:
 
 ---
 
-##  Role of Edge Computing
 
-This project is designed to be deployable on **edge devices (e.g., Jetson Nano)**.
-
-### Why Edge Computing?
-
-* **Low Latency** → Real-time predictions and explanations
-* **Offline Capability** → No dependency on cloud services
-* **Efficiency** → Reduced data transfer and cost
-
-### What runs on edge:
-
-* Trained ResNet18 model
-* XAI techniques (Grad-CAM, LIME, SHAP)
-* Dashboard visualization generation
-
----
 
 ##  Methodology / Approach
 
