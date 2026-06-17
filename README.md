@@ -106,6 +106,9 @@ Evaluation Metrics → Prototype Matching → Dashboard Visualization
 ### 🔹 Explainability Outputs
 
 * **Grad-CAM**: Heatmaps showing important regions
+
+<img width="4524" height="2076" alt="Image" src="https://github.com/user-attachments/assets/98fe95a9-20ff-42aa-93c4-3f964044d7c6" />
+  
 * **LIME**: Segmented region importance
 * **SHAP**: Pixel-level contributions
 
