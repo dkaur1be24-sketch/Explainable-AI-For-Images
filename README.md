@@ -209,11 +209,14 @@ python dashboard.py
 This project bridges the gap between **model accuracy and interpretability** by combining multiple XAI techniques into a unified dashboard. It not only explains predictions but also evaluates and visualizes them, making deep learning models more transparent and trustworthy.
 
 ---
-👩‍💻 Author
+##👩‍💻 Author
 
 Diljeet Kaur
+---
 
-⭐ Final Note
+---
+##⭐ Final Note
 
 This project is not just about generating explanations —
 it is about understanding, validating, and trusting AI decisions.
+---
