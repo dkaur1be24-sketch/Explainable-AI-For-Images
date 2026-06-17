@@ -1,225 +1,231 @@
-# 🔍 Explainable AI (XAI) Pipeline with Evaluation & Prototype Reasoning
+# 🔍 Explainable AI Dashboard for Image Classification (CIFAR-10)
 
 ---
 
-## 📌 Project Overview
-
-This project focuses on building a **comprehensive Explainable AI (XAI) pipeline** for image classification models.
-Instead of relying on a single explanation method, this system integrates **multiple XAI techniques**, evaluates their reliability, and enhances interpretability using **prototype-based reasoning**.
-
-The goal is not just to *visualize explanations*, but to **measure their correctness and trustworthiness**.
+**Explainable AI Dashboard for Deep Learning Models using Grad-CAM, LIME, and SHAP**
 
 ---
 
-## ❗ Problem Statement
+## 2. Problem Statement
 
-Deep learning models (especially CNNs) achieve high accuracy but act as **black boxes**.
-This lack of transparency creates challenges in:
+Deep learning models, especially Convolutional Neural Networks (CNNs), achieve high accuracy in image classification tasks but act as **black boxes**. This lack of transparency makes it difficult to understand *why* a model makes a particular decision.
 
-* Trusting model decisions
-* Debugging incorrect predictions
-* Deploying models in sensitive domains
+This project addresses this issue by:
 
-This project addresses the question:
+* Providing **visual explanations** for model predictions
+* Comparing multiple Explainable AI (XAI) techniques
+* Evaluating explanation quality using quantitative metrics
 
-> *“Can we trust model explanations, and how do we validate them?”*
+👉 Goal: Build a system that explains, evaluates, and visualizes model decisions in a clear and interpretable way.
 
 ---
 
-## 🧠 Methodology / Approach
+## 3. Role of Edge Computing
 
-The system follows a structured pipeline:
+This project is designed to be deployable on **edge devices (e.g., Jetson Nano)**.
+
+### Why Edge Computing?
+
+* **Low Latency** → Real-time predictions and explanations
+* **Offline Capability** → No dependency on cloud services
+* **Efficiency** → Reduced data transfer and cost
+
+### What runs on edge:
+
+* Trained ResNet18 model
+* XAI techniques (Grad-CAM, LIME, SHAP)
+* Dashboard visualization generation
+
+---
+
+## 4. Methodology / Approach
+
+### 🔁 Overall Pipeline
 
 ```
-Input Image 
-   → Preprocessing 
-   → CNN Model (Feature Extraction + Prediction) 
-   → XAI Methods (GradCAM, LIME, SHAP) 
-   → Evaluation Metrics (Faithfulness + Sanity Checks) 
-   → Prototype Reasoning (Nearest Neighbor Explanation)
-   → Output Visualization
+Input Image → Preprocessing → Model Prediction → XAI Explanations →
+Evaluation Metrics → Prototype Matching → Dashboard Visualization
 ```
+
+### 🧩 Steps Explained:
+
+1. **Input**: Images from CIFAR-10 dataset
+2. **Preprocessing**:
+
+   * Normalization for model input
+   * Raw images for visualization
+3. **Model**:
+
+   * ResNet18 predicts class probabilities
+4. **Explainability**:
+
+   * Grad-CAM → attention heatmaps
+   * LIME → local region importance
+   * SHAP → pixel-level contribution
+5. **Evaluation**:
+
+   * Deletion & Insertion curves
+   * AUC scores
+6. **Prototype Matching**:
+
+   * Finds similar training images using feature embeddings
+7. **Dashboard Generation**:
+
+   * Combines all outputs into a visual panel
 
 ---
 
-## 🤖 Model Details
+## 5. Model Details
 
-* **Architecture**: Convolutional Neural Network (ResNet-based)
-* **Framework**: PyTorch
-* **Input Size**: 224 × 224 RGB images
-* **Feature Dimension**: 512-d embedding space
+* **Model**: ResNet18 (CNN architecture)
 * **Dataset**: CIFAR-10
+* **Input Size**: 32 × 32 RGB images
+* **Framework**: PyTorch
+* **Feature Extraction**:
+
+  * Final layer removed to extract embeddings
+* **Special Handling**:
+
+  * Modified ResNet blocks to fix SHAP compatibility (removed inplace operations)
 
 ---
 
-## 🔍 Explainability Methods Used
+## 6. Training Details
 
-### 1. GradCAM
+* **Dataset**: CIFAR-10 (10 classes)
+* **Training Process**:
 
-* Produces heatmaps highlighting important regions
-* Uses gradient flow in convolution layers
+  * Standard supervised learning
+  * Cross-entropy loss
+* **Evaluation**:
 
-### 2. LIME (Local Interpretable Model-Agnostic Explanations)
+  * Accuracy and loss tracking
+* **Output**:
 
-* Perturbs input image
-* Learns local surrogate model
-
-### 3. SHAP (SHapley Additive exPlanations)
-
-* Based on game theory
-* Assigns importance values to image regions
+  * Trained model saved as `.pth` file
 
 ---
 
-## 📊 Evaluation Metrics (Core Strength of Project)
+## 7. Results / Output
 
-This project goes beyond visualization by **quantitatively evaluating explanations**:
+### 📊 Model Output
 
-### 🔻 Deletion AUC
+* Predicted class with confidence score
 
-* Measures how quickly prediction confidence drops when important pixels are removed
-* Lower is better
+### 🧠 Explainability Outputs
 
-### 🔺 Insertion AUC
+* **Grad-CAM**: Heatmaps showing important regions
+* **LIME**: Segmented region importance
+* **SHAP**: Pixel-level contributions
 
-* Measures how quickly prediction confidence increases when important pixels are added
-* Higher is better
+### 📉 Evaluation Metrics
 
-### 🔄 Sanity Check
+* **Deletion Curve** ↓ → Faster drop = better explanation
+* **Insertion Curve** ↑ → Faster rise = better explanation
+* **AUC Scores** → Quantitative comparison of XAI methods
 
-* Tests whether explanations change when model weights are randomized
-* Ensures explanations are **model-dependent (not random)**
+### 🧬 Prototype Analysis
 
----
+* Displays top-5 similar images from training dataset
 
-## 🧩 Prototype-Based Reasoning (Unique Feature)
+### 🖼️ Dashboard Output
 
-A key innovation of this project is **case-based explanation**:
+Each dashboard includes:
 
-* Extract feature embeddings from the model
-* Use **cosine similarity + nearest neighbors**
-* Retrieve most similar training images
-
-### Why this matters:
-
-> “The model predicted this image as a *cat* because it looks similar to these training examples.”
-
-### Additional Metric:
-
-* **Prototype Purity**:
-  Percentage of nearest neighbors belonging to the same class
+* Original Image
+* Grad-CAM, LIME, SHAP overlays
+* Prediction + Confidence
+* Deletion & Insertion curves
+* Prototype images
 
 ---
 
-## 📈 Feature Space Visualization
+## 8. Dashboard (Core Feature)
 
-* PCA and t-SNE used to visualize embeddings
-* Helps understand:
+The `dashboard.py` file builds a **complete Explainable AI visualization system**.
 
-  * Class clustering
-  * Feature separability
-  * Model representation quality
+### What it does:
 
----
+* Runs predictions on test images
+* Generates explanations using:
 
-## 📊 Results
+  * Grad-CAM
+  * LIME
+  * SHAP
+* Evaluates explanation quality
+* Finds similar images (prototypes)
+* Creates a **final dashboard image per class**
 
-The project produces:
+### Output:
 
-* GradCAM heatmaps
-* LIME explanation overlays
-* SHAP value visualizations
-* Deletion/Insertion metric graphs
-* Prototype nearest neighbor results
-* Feature space plots
+* High-quality visual panels saved as `.png` files
 
----
-
-## 🎥 Demo Video
-
-👉 *(Add your Google Drive / YouTube link here)*
+👉 This transforms raw model outputs into **interpretable insights**
 
 ---
 
-## ⚙️ Setup Instructions
+## 9. Setup Instructions
 
-### 1. Clone Repository
+### 🔧 Requirements
 
-```
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-```
+* Python 3.x
+* PyTorch
+* torchvision
+* numpy
+* matplotlib
+* scikit-learn
+* lime
+* shap
 
-### 2. Install Dependencies
+---
 
-```
-pip install -r requirements.txt
-```
+### ⚙️ Installation
 
-### 3. Run the Project
-
-```
-python main.py
+```bash
+pip install torch torchvision numpy matplotlib scikit-learn lime shap
 ```
 
 ---
 
-## 📁 Project Structure
+### ▶️ Run the Project
 
-```
-project/
-│
-├── main.py
-├── config.py
-├── preprocessing.py
-├── inference.py
-├── utils.py
-│
-├── xai/
-│   ├── gradcam.py
-│   ├── lime.py
-│   ├── shap.py
-│
-├── evaluation/
-│   ├── metrics.py
-│   ├── sanity_checks.py
-│
-├── prototype/
-│   ├── prototype.py
-│
-├── models/
-├── results/
-└── requirements.txt
+```bash
+python prototype.py
+python dashboard.py
 ```
 
 ---
 
-## 🚀 Key Highlights
+### 📂 Outputs Generated
 
-✔ Multi-method XAI comparison
-✔ Quantitative evaluation of explanations
-✔ Sanity checks for reliability
-✔ Prototype-based reasoning system
-✔ Feature space visualization
+* Explanation visualizations
+* Evaluation graphs
+* Dashboard images
 
 ---
 
-## 🔮 Future Improvements
+## 10. Key Highlights
 
-* Add real-world dataset (e.g., medical / environmental images)
-* Build web interface (Streamlit / Flask)
-* Extend to multi-class and multi-object scenarios
-* Improve t-SNE visualization with test integration
-
----
-
-## 👩‍💻 Author
-
-**Diljeet Kaur**
+✔ Combines **three XAI methods** (Grad-CAM, LIME, SHAP)
+✔ Provides **quantitative evaluation (AUC, curves)**
+✔ Includes **prototype-based interpretability**
+✔ Fixes **SHAP-PyTorch compatibility issue**
+✔ Generates **complete visual dashboards**
+✔ Ready for **edge deployment**
 
 ---
 
-## ⭐ Final Note
+## 11. Future Improvements
 
-This project is not just about generating explanations —
-it is about **understanding, validating, and trusting AI decisions**.
+* Real-time dashboard UI (web app)
+* Support for larger datasets (ImageNet)
+* Model comparison (multiple architectures)
+* Optimization using TensorRT for edge devices
+
+---
+
+## 12. Conclusion
+
+This project bridges the gap between **model accuracy and interpretability** by combining multiple XAI techniques into a unified dashboard. It not only explains predictions but also evaluates and visualizes them, making deep learning models more transparent and trustworthy.
+
+---
